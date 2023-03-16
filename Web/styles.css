@@ -1,0 +1,52 @@
+p {
+    color: #ffffff;
+    font-size: 40px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+h1 {
+    color: aliceblue;
+    font-size: 70px;
+}
+
+h2 {
+    color: aliceblue;
+    font-size: 60px;
+    margin-top: 50px;
+}
+
+img {
+    border-radius: 40px;
+    margin-top: 50px;
+  }
+
+.secondpage a:link, a:visited, a:focus {
+    background: rgb(1, 255, 213);
+    text-decoration: none;
+    border-radius: 10px;
+  }
+  
+.secondpage a:hover {
+    background: rgb(200, 255, 0);
+  }
+  
+.secondpage a:active {
+    background: red;
+    color: white;
+  }
+
+.email{
+    margin-top: 50px;
+    font-size: 50px;
+
+}
+
+.email a:link, a:visited, a:focus {
+    background: rgb(1, 255, 213);
+    text-decoration: none;
+    border-radius: 10px;
+}
+
+.email a:hover {
+    background: rgb(200, 255, 0);
+}
