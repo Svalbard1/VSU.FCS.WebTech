@@ -1,59 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>WebTech</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="images/fcs.jpg"/>
-        <link rel="stylesheet" type="text/css" href="styles.css"/>
-    </head>
 
-    <div class="secondpage">
-        <ul>
+<head>
+    <title>WebTech</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/fcs.jpg" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script type="text/javascript">
+        function enlargeImage(img) {
+            var newWidth = img.width * 1.5; // увеличение ширины в 1.5 раза
+            var newHeight = img.height * 1.5; // увеличение высоты в 1.5 раза
+            img.style.width = newWidth + "px";
+            img.style.height = newHeight + "px";
+        }
+    </script>
+
+</head>
+
+<p>Вход на сайт: <span id="last-login"></span></p>
+<button id="accept-local-storage">Принять</button>
+<button id="delete-local-storage">Удалить данные</button>
+
+<script>
+    const lastLoginSpan = document.getElementById('last-login');
+    const acceptButton = document.getElementById('accept-local-storage');
+    const deleteButton = document.getElementById('delete-local-storage');
+
+    // Получаем значение последнего входа на сайт из локального хранилища
+    const lastLogin = localStorage.getItem('last_login');
+
+    // Если данные есть, выводим время последнего входа
+    if (lastLogin) {
+        lastLoginSpan.textContent = new Date(parseInt(lastLogin)).toLocaleString();
+    }
+
+    // Обработчик нажатия на кнопку "Принять"
+    acceptButton.addEventListener('click', () => {
+        // Сохраняем время последнего входа в локальное хранилище
+        localStorage.setItem('last_login', Date.now());
+        lastLoginSpan.textContent = new Date().toLocaleString();
+    });
+
+    // Обработчик нажатия на кнопку "Удалить данные"
+    deleteButton.addEventListener('click', () => {
+        // Удаляем данные из локального хранилища
+        localStorage.removeItem('last_login');
+        lastLoginSpan.textContent = '';
+    });
+</script>
+
+
+<div class="secondpage">
+    <ul>
         <p><a href="aboutme.html" style="font-size: 30px;">Обо мне</a></p>
-        </ul>
-    </div>
+    </ul>
+</div>
 
-    <div>
+<div class="secondpage">
+    <ul><p><a href="yourphoto.php" style="font-size: 30 px;">Фоточки</a></p></ul>
+</div>
+
+<div>
+
     <body bgcolor="#ae3e27">
-        <h1 align="center">Автомобиль спасший Volkswagen</h1> 
+        <h1 align="center">Автомобиль спасший Volkswagen</h1>
         <center>
-        <img src="images/golf2gti.jpg" alt="Golf 2 GTI" border="3">
+            <img src="images/golf2gti.jpg" alt="Golf 2 GTI" border="3" onclick="enlargeImage(this)" />
+
         </center>
-    </div>          
-    
-    <div>
-        <center>
+</div>
+
+<div>
+    <center>
         <p><b>
             Второе поколение авто, давшего название целому классу, считается одним из самых удачных за всю историю. Простые в эксплуатации, недорогие в обслуживании и крепкие машины до сих пор привлекают внимание на выставках и мероприятиях энтузиастов VAG. Было выпущено 6,31 млн. экземпляров, многие из них дожили до наших дней и встречаются на дорогах, хотя некоторым «Гольфам» уже под сорок лет.
         </b></p>
-        </center>
-    </div>
+    </center>
+</div>
 
-    <div>
-        <h2 align="center">История и версии</h2>
-        <center>
+<div>
+    <h2 align="center">История и версии</h2>
+    <center>
         <p><b>Гольф 2 начали выпускать с августа 1983. Около года его собирали параллельно с первой генерацией. Golf 2 похож на предшественника, но формы стали более объемными. Авто длиннее на 30 см и шире на 5,5 см. Салон ощутимо крупнее, а машина комфортнее. Коэффициент аэродинамического сопротивления снизился с 0,42 до 0,34.
 
             Авто приобрело популярность и его собирали не только в Германии, но и еще в 7 странах Европы, а также в США и Японии. Покупателям предлагали трех и пятидверные хэтчбеки. С 1984 года начали продавать разновидность в кузове седан, которую назвали «Джетта».
             
             Самыми простыми были «C» и «CL». Это базовые варианты с небольшими моторами, но и они комплектовались различными опциями по запросу клиента.</b></p>
-        </center>
-    </div>
+    </center>
+</div>
 
-    <div>
-        <center>
+<div>
+    <center>
         <p><b>Культовой на сегодня стала версия GTI. Ее выпускали с 1984 года, комплектовали разными моторами и совершенствовали.
 
             Мощный, но и более редкий вариант G60 оснащался механическим наддувом. Была и полноприводная серия G60 Syncro. Еще одной версией проходимого авто стала Rally, которая выделялась измененной оптикой, другими бамперами и решеткой радиатора, также там были расширены арки.</b></p>
-        <img src="images/g60.jpg" alt="Golf 2 G60" border="3" height="740" width="960">
-        </center> 
-    </div>
-    
-    <div>    
-        <h2 align="center">Моторы</h2>
-        <center>
+        <img src="images/g60.jpg" alt="Golf 2 G60" border="3" height="740" width="960" onclick="enlargeImage(this)">
+    </center>
+</div>
+
+<div>
+    <h2 align="center">Моторы</h2>
+    <center>
         <p><b>Базовыми были бензиновые двигатели объемом 1.3, 1,6 и 1.8 литра. Их комплектовали карбюраторами Pierburg – достаточно сложными конструктивно, но позволяющим настроить двигатель практически идеально.
 
             С 1984 года стали применять системы механического впрыска Jetronic, чуть позже появились одноименные варианты с электронным управлением. Фольксваген использовал и впрыск собственной разработки. На моторах объемом 1.3 литра ставилась модификация Digijet, на 1.8 – Digifant.
@@ -63,14 +112,16 @@
             GTI начали собирать с 1984 года, на заряженную версию ставили 8-клапанный агрегат на 112 «лошадей». В 1987 году появился вариант с 16-клапанным мотором, который выдавал 139 л. с. и считается одним из лучших за всю историю линейки.
             
             Двигатель PG с механическим нагнетателем G60 имел мощность 160 «лошадей» и устанавливался на некоторые заряженные версии. Последним стал вариант, в котором использовалась 16-клапанная головка блока цилиндров. За счет этого удалось увеличить отдачу до 210 л. с.</b></p>
-        </center>
-    </div>
-    
-    <div>
-        <h2 align="center">Вывод</h2>
-        <center>
-            <p><b>Сегодня эту машину выбирают те, кому нужно купить средство передвижения за небольшие деньги, но есть и категория ценителей. Они берут проект под восстановление, доводят до оригинального состояния и ездят по слетам и фестам.</b></p>
-        </center>
-    </div>
-    </body>
+    </center>
+</div>
+
+<div>
+    <h2 align="center">Вывод</h2>
+    <center>
+        <p><b>Сегодня эту машину выбирают те, кому нужно купить средство передвижения за небольшие деньги, но есть и категория ценителей. Они берут проект под восстановление, доводят до оригинального состояния и ездят по слетам и фестам.</b></p>
+    </center>
+</div>
+
+</body>
+
 </html>
